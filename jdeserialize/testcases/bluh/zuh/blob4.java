@@ -1,7 +1,6 @@
 package bluh.zuh;
 
-import java.util.*;
-import java.io.*;
+import java.io.Serializable;
 
 
 public class blob4 implements Serializable {

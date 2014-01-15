@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class blobex implements Serializable {
+public class blobex2 implements Serializable {
      private void writeObject(java.io.ObjectOutputStream out) throws IOException {
          out.defaultWriteObject();
          throw new IOException("woops");
@@ -15,7 +15,7 @@ public class blobex implements Serializable {
         return "[blobex a " + a + "  b " + b + "]";
     }
 
-    public blobex(int a) {
+    public blobex2(int a) {
         String b = "zoo";
         this.a = a;
         this.b = b;
