@@ -1,4 +1,4 @@
-package org.unsynchronized;
+
 
 import java.io.*;
 import java.util.*;
@@ -305,9 +305,9 @@ public class jdeserialize {
         if(inst.annotations != null && inst.annotations.size() > 0) {
             sb.append(linesep).append("  object annotations:").append(linesep);
             for(classdesc cd: inst.annotations.keySet()) {
-                sb.append("    ").append(cd.name).append(linesep);
+                sb.append("    ").append(cd == null || cd.name == null ? "<null>" : cd.name).append(linesep);
                 for(content c: inst.annotations.get(cd)) {
-                    sb.append("        ").append(c.toString()).append(linesep);
+                    sb.append("        ").append(String.valueOf( c )).append(linesep);
                 }
             }
         }
