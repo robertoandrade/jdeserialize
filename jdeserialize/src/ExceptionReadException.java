@@ -1,6 +1,5 @@
-package org.unsynchronized;
-import java.io.*;
-import java.util.*;
+
+import java.io.IOException;
 
 /**
  * Exception used to signal that an exception object was successfully read from the 

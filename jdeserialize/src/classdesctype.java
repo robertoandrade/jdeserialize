@@ -1,4 +1,4 @@
-package org.unsynchronized;
+
 
 /**
  * Enum for class description types.

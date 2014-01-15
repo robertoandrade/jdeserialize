@@ -1,6 +1,5 @@
-package org.unsynchronized;
-import java.io.*;
-import java.util.*;
+
+import java.io.IOException;
 
 /**
  * Exception that denotes that data in the stream did not conform to the constraints

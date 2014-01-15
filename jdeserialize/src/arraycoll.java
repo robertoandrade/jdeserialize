@@ -1,6 +1,5 @@
-package org.unsynchronized;
-import java.io.*;
-import java.util.*;
+
+import java.util.ArrayList;
 
 /**
  * <p>Typed collection used for storing the values of a serialized array.  </p>
