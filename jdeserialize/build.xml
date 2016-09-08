@@ -21,7 +21,7 @@
             <fileset dir="." includes="build.xml" />
             <fileset dir="." includes="README" />
             <manifest>
-                <attribute name="Main-Class" value="org.unsynchronized.jdeserialize" />
+                <attribute name="Main-Class" value="jdeserialize" />
             </manifest>
         </jar>
     </target>
