@@ -224,8 +224,8 @@ public class jdeserialize {
             case OBJECT:
             case ARRAY:
                 byte stc = dis.readByte();
-                if(f == fieldtype.ARRAY && stc != ObjectStreamConstants.TC_ARRAY) {
-                    throw new IOException("array type listed, but typecode is not TC_ARRAY: " + hex(stc));
+                if(f == fieldtype.ARRAY && (stc != ObjectStreamConstants.TC_ARRAY  && stc != ObjectStreamConstants.TC_NULL && stc != ObjectStreamConstants.TC_REFERENCE)) {
+                    throw new IOException("array type listed, but typecode is not TC_ARRAY|TC_NULL|TC_REFERENCE: " + hex(stc));
                 }
                 content c = read_Content(stc, dis, false);
                 if(c != null && c.isExceptionObject()) {
@@ -626,8 +626,10 @@ public class jdeserialize {
         if(cd.name.length() < 2) {
             throw new IOException("invalid name in array classdesc: " + cd.name);
         }
-        arraycoll ac = read_arrayValues(cd.name.substring(1), dis);
-        return new arrayobj(handle, cd, ac);
+        arrayobj ao = new arrayobj(handle, cd, null);
+        setHandle(handle, ao);
+        ao.data = read_arrayValues(cd.name.substring(1), dis);
+        return ao;
     }
     public arraycoll read_arrayValues(String str, DataInputStream dis) throws IOException {
         byte b = str.getBytes("UTF-8")[0];
