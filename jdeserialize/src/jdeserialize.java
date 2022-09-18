@@ -840,7 +840,7 @@ public class jdeserialize {
                     break;
                 }
                 content c = read_Content(tc, dis, true);
-                System.out.println("read: " + c.toString());
+                System.out.println("read: " + c);
                 if(c != null && c.isExceptionObject()) {
                     c = new exceptionstate(c, lis.getRecordedData());
                 }
@@ -918,7 +918,7 @@ public class jdeserialize {
         if(!go.hasOption("-nocontent")) {
             System.out.println("//// BEGIN stream content output");
             for(content c: content) {
-                System.out.println(c.toString());
+                System.out.println(c);
             }
             System.out.println("//// END stream content output");
             System.out.println("");

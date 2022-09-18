@@ -41,7 +41,7 @@ public class arraycoll extends ArrayList<Object> {
             } else {
                 sb.append(", ");
             }
-            sb.append(o.toString());
+            sb.append(o);
         }
         return sb.toString();
     }
